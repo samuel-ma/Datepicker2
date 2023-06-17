@@ -1,0 +1,131 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    color: #272727;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+    font-size: smaller;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin: 50px;
+    color: var(--black);
+    border-radius: 15px;
+    background-color: #f5f7f8;
+    border: 1px solid #fc354c;
+}
+
+input[type="range"] {
+    width: 200px;
+}
+
+span {
+    font-size: 16px;
+}
+
+p {
+    border: 1px dashed #e9909a;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: white;
+}
+
+.inputText {
+    padding: 10px;
+    border: 1px solid #fc354c;
+}
+
+.button {
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 20px;
+    background: #fc354c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #0abfbc,
+        #fc354c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #0abfbc,
+        #fc354c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+}
+
+.reset {
+    cursor: pointer;
+    background: #fc354c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #0abfbc,
+        #fc354c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #0abfbc,
+        #fc354c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border: none;
+    color: white;
+    padding: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 40px;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    background: linear-gradient(to right, #0abfbc, #fc354c);
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+}
