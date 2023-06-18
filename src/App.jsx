@@ -5,6 +5,7 @@ import './App.css'
 function App() {
     // working with state
     const [count, setCount] = useState(0);
+    const [input, setInput] = useState(1);
     const [mode, setMode] = useState("dark");
 
     // date function
@@ -12,16 +13,16 @@ function App() {
 
     // click events
     const addCount = () => {
-        setCount(count + 1);
+        setCount(count + input);
     }
 
     const subCount = () => {
-        setCount(count - 1);
+        setCount(count - input);
     }
 
     const inputValue = (e) => {
         e.preventDefault();
-        setCount(e.target.value)
+        setInput(Number(e.target.value))
     }
 
     const reset = () => {
@@ -37,8 +38,8 @@ function App() {
             <main style={mode ? {} : { background: "linear-gradient(to left, #ff00cc, #333399)", border: "1px solid white" }}>
                 <section className='app'>
 
-                    <input min={0} max={10} type="range" style={mode ? {} : { border: "1px solid white" }} value={count} onChange={inputValue} />
-                    <span style={mode ? {} : { color: "white" }}>{count}</span>
+                    <input min={0} max={10} type="range" style={mode ? {} : { border: "1px solid white" }} value={input} onChange={inputValue} />
+                    <span style={mode ? {} : { color: "white" }}>{input}</span>
 
                     <div className='input'>
                         <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={subCount}>-</button>
