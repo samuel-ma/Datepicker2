@@ -9,7 +9,8 @@ function App() {
     const [mode, setMode] = useState("dark");
 
     // date function
-    const date = new Date();
+    const date = new Date("June 18 2023");
+    date.setDate(date.getDate() + count);
 
     // click events
     const addCount = () => {
@@ -50,11 +51,11 @@ function App() {
                     <section className='output'>
                         {
                             (count === 0)
-                                ? <p>Today is {date.setDate(date.getDate() + count)}</p>
+                                ? <p>Today is {date.toDateString()}</p>
                                 : (count > 0)
-                                    ? <p>{count} days from today is {date.setDate(date.getDate() + count)}</p>
+                                    ? <p>{count} days from today is {date.toDateString()}</p>
                                     : (count < 0)
-                                        ? <p>{Math.abs(count)} days from today was {date.setDate(date.getDate() + count)}</p>
+                                        ? <p>{Math.abs(count)} days from today was {date.toDateString()}</p>
                                         : null
                         }
                         <button style={mode ? {} : { border: "1px solid white" }} onClick={reset} className='reset'>Reset</button>
