@@ -28,17 +28,17 @@ function App() {
     }
 
     return (
-        <div className='body' style={mode ? { backgroundColor: "white" } : { backgroundColor: "white" }}>
-            <main>
+        <div className='body'>
+            <main style={mode ? {} : { background: "linear-gradient(to left, #ff00cc, #333399)", border: "1px solid white" }}>
                 <section className='app'>
 
-                    <input type="range" />
-                    <span>1</span>
+                    <input type="range" style={mode ? {} : { border: "1px solid white" }} />
+                    <span style={mode ? {} : { color: "white" }}>1</span>
 
                     <div className='input'>
-                        <button className='button' onClick={subCount}>-</button>
-                        <input className='inputText' type="text" placeholder='Enter value...' />
-                        <button className='button' onClick={addCount}>+</button>
+                        <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={subCount}>-</button>
+                        <input style={mode ? {} : { border: "1px solid white" }} className='inputText' type="text" placeholder='Enter value...' />
+                        <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={addCount}>+</button>
                     </div>
 
                     <section className='output'>
@@ -51,7 +51,7 @@ function App() {
                                         ? <p>{Math.abs(count)} days from today was {date}</p>
                                         : null
                         }
-                        <button onClick={reset} className='reset'>Reset</button>
+                        <button style={mode ? {} : { border: "1px solid white" }} onClick={reset} className='reset'>Reset</button>
                     </section>
                 </section>
             </main>
