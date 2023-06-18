@@ -19,6 +19,11 @@ function App() {
         setCount(count - 1);
     }
 
+    const inputValue = (e) => {
+        e.preventDefault();
+        setCount(e.target.value)
+    }
+
     const reset = () => {
         setCount(0);
     }
@@ -32,12 +37,12 @@ function App() {
             <main style={mode ? {} : { background: "linear-gradient(to left, #ff00cc, #333399)", border: "1px solid white" }}>
                 <section className='app'>
 
-                    <input type="range" style={mode ? {} : { border: "1px solid white" }} />
+                    <input min={0} max={10} type="range" style={mode ? {} : { border: "1px solid white" }} value={count} onChange={inputValue} />
                     <span style={mode ? {} : { color: "white" }}>1</span>
 
                     <div className='input'>
                         <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={subCount}>-</button>
-                        <input style={mode ? {} : { border: "1px solid white" }} className='inputText' type="text" placeholder='Enter value...' />
+                        <input style={mode ? {} : { border: "1px solid white" }} className='inputText' type="text" value={count} onChange={inputValue} placeholder='Enter value...' />
                         <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={addCount}>+</button>
                     </div>
 
