@@ -8,7 +8,7 @@ function App() {
     const [mode, setMode] = useState("dark");
 
     // date function
-    const date = new Date().toDateString();
+    const date = new Date();
 
     // click events
     const addCount = () => {
@@ -38,7 +38,7 @@ function App() {
                 <section className='app'>
 
                     <input min={0} max={10} type="range" style={mode ? {} : { border: "1px solid white" }} value={count} onChange={inputValue} />
-                    <span style={mode ? {} : { color: "white" }}>1</span>
+                    <span style={mode ? {} : { color: "white" }}>{count}</span>
 
                     <div className='input'>
                         <button style={mode ? {} : { border: "1px solid white" }} className='button' onClick={subCount}>-</button>
@@ -49,11 +49,11 @@ function App() {
                     <section className='output'>
                         {
                             (count === 0)
-                                ? <p>Today is {date}</p>
+                                ? <p>Today is {date.setDate(date.getDate() + count)}</p>
                                 : (count > 0)
-                                    ? <p>{count} days from today is {date}</p>
+                                    ? <p>{count} days from today is {date.setDate(date.getDate() + count)}</p>
                                     : (count < 0)
-                                        ? <p>{Math.abs(count)} days from today was {date}</p>
+                                        ? <p>{Math.abs(count)} days from today was {date.setDate(date.getDate() + count)}</p>
                                         : null
                         }
                         <button style={mode ? {} : { border: "1px solid white" }} onClick={reset} className='reset'>Reset</button>
